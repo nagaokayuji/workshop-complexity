@@ -111,7 +111,161 @@ $T(N) = T(N-1) + T(N-2) + O(1)$
 これはフィボナッチ数列と同様の増加の仕方となります。
 
 フィボナッチ数列の一般項は
+
 $$
 \frac{1}{\sqrt{5}} \left\{ \left( \frac{1+\sqrt{5}}{2} \right)^n - \left( \frac{1-\sqrt{5}}{2} \right)^n \right\}
 $$
+
 であるため、計算量としては$O((\frac{1 + \sqrt{5}}{2})^N)$です。
+
+## Q3-4
+
+元の実装では以下のように何度も同じ処理が呼ばれていました。
+
+![image](https://res.cloudinary.com/ddaz9etkx/image/upload/v1629479070/202108/workshop-figures_oswkqh.png)
+
+![image](https://res.cloudinary.com/ddaz9etkx/image/upload/v1629479371/202108/workshop-figures_1_up2ame.png)
+
+色を付けた部分が同じ引数で呼び出されたものです。
+これを削減できれば計算量が改善できそうです。
+### $O(N)$ の解法
+
+メモ化再帰 や 動的計画法(Dynamic Programming, DP) と呼ばれる手法を用いて計算すると$O(N)$となります。
+#### メモ化再帰
+
+同じ処理が何度も呼ばれるのは無駄ですね。
+
+では、一度計算した内容は保持しておくようにしたらどうでしょうか。
+
+同じ計算は結果がわかっていれば使い回せそうです。
+
+![figure](https://res.cloudinary.com/ddaz9etkx/image/upload/v1629480178/202108/workshop-figures_2_anl0ep.png)
+
+
+同様に、$F(N-3), F(N-4), \cdots $ も一度だけ計算されるようにした場合、$O(N)$になりそうですね。
+
+これを実現するコードが以下です。
+
+```python
+memo = [1] * (N+1) #計算結果のメモ用に、長さ(N+1)のリストを用意
+calculated = [False] * (N+1)  #計算済みフラグ
+calculated[1] = calculated[2] = True # 1, 2 の場合は1固定のため
+
+def fib(N: int):
+    if calculated[N]:   # 一度計算されていたら
+        return memo[N]  # memo の内容を返す
+    else:
+        memo[N] = fib(N-1) + fib(N-2) # 計算されていない場合は計算する
+        calculated[N] = True          # 計算済みフラグをTrueにする
+        return memo[N]
+
+print(fib(N))
+```
+わかりやすさのため`calculated`と`memo`に分けていますが、一般的には `memo` のみを使用して実装します。
+
+
+### DP による解法
+
+再帰を用いず、普通に計算結果を使い回して計算することでも$O(N)$になります。
+
+次の図のようなイメージで、前から計算していきます。
+
+![image](https://res.cloudinary.com/ddaz9etkx/image/upload/v1629481671/202108/workshop-figures_3_uvccuu.png)
+
+```python
+def fib(N: int):
+    dp = [1] * (N+1) # 第1項、第2項が 1 のため 1 で初期化
+    for i in range(3,N+1):  # 普通に前から計算していく
+        dp[i] = dp[i-1] + dp[i-2]
+    return dp[N]
+
+print(fib(N))
+```
+
+やっていることはメモ化再帰と同様で、**全く同じ処理は繰り返さない** ことがカギとなります。
+
+
+### $O(\log N)$ の解法
+
+少し高度な内容を含みます。
+
+$$
+\begin{pmatrix}
+F(N+1) \\
+F(N)
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 1\\
+1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+F(N) \\
+F(N-1)
+\end{pmatrix}
+$$
+
+が成り立つことを利用します。
+（これに限らず、漸化式は行列の積で表せることが多いです！）
+
+これより、
+
+$$
+\begin{pmatrix}
+F(N+1) \\
+F(N)
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 1\\
+1 & 0
+\end{pmatrix}^{N-1}
+\begin{pmatrix}
+F(2) \\
+F(1)
+\end{pmatrix}
+$$
+となります。
+
+この計算の計算量を見積もります。
+
+まず、$2 \times 2$ 行列の掛け算は 8 回の掛け算と 4 回の足し算で済むので、定数オーダーです。
+
+また、一般に$A^{2N} = (A^N)^2$ であるため、$A^N$ の計算は$O(\log N)$ であることがわかります。[^1]  
+- 例: $2^{10} = 2^{8+2} = (2^2)^4 * 2^2 = ((2^2)^2)^2 * 2^2$ とすると、6回の掛け算で計算できる。
+
+以上より、次のような実装で$O(\log N)$を達成できます。
+
+```python
+import numpy as np
+def pow(A, n):
+    '''
+    繰り返し二乗法
+    Aは行列
+    '''
+    ret = np.eye(len(A), dtype=np.int64) # Aと同じサイズの単位行列で初期化
+    while n:                             # n > 0 の間
+        if n % 2:                        # 最下位のbitが立っている場合
+            ret = ret.dot(A)             # 返り値に A を加える
+        A = A.dot(A)                     # A に A^2 を代入
+        n >>= 1                          # 右シフト
+    return ret
+
+def fib(N):
+    A = np.array([[1, 1], [1, 0]], dtype=np.int64) # 行列を定義
+    mat = pow(A, N-1)                              # 行列の累乗を計算 O(log N)
+    ret = mat.dot(np.array([[1], [1]], dtype=np.int64))
+    return ret[1][0]
+```
+上記コードでは `numpy`というライブラリを使用しており、これは数値計算を簡単にするものです。
+例えば `A.dot(B)` とすると $A \times B$ の行列積を計算できます。
+
+
+
+
+
+
+[^1]: 繰り返し二乗法などと呼ばれます。
+
+
+## Q3-5
