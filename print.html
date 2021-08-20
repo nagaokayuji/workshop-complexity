@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="complexity.html">計算量とはなにか</a></li><li class="chapter-item expanded "><a href="complexity_landau.html"><strong aria-hidden="true">1.</strong> 計算量の表し方</a></li><li class="chapter-item expanded "><a href="process_time.html"><strong aria-hidden="true">2.</strong> 処理時間について</a></li><li class="chapter-item expanded "><a href="sort.html"><strong aria-hidden="true">3.</strong> ソートの計算量</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sort_bubble_sort.html"><strong aria-hidden="true">3.1.</strong> バブルソート</a></li><li class="chapter-item expanded "><a href="sort_heap_sort.html"><strong aria-hidden="true">3.2.</strong> ヒープソート</a></li><li class="chapter-item expanded "><a href="sort_merge_sort.html"><strong aria-hidden="true">3.3.</strong> マージソート</a></li><li class="chapter-item expanded "><a href="sort_quick_sort.html"><strong aria-hidden="true">3.4.</strong> クイックソート</a></li><li class="chapter-item expanded "><a href="sort_limit.html"><strong aria-hidden="true">3.5.</strong> ソートの限界について</a></li></ol></li><li class="chapter-item expanded "><a href="example1.html"><strong aria-hidden="true">4.</strong> 例題</a></li><li class="chapter-item expanded "><a href="application.html"><strong aria-hidden="true">5.</strong> 発展</a></li><li class="chapter-item expanded "><a href="practice.html"><strong aria-hidden="true">6.</strong> 計算量クイズ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="complexity/answer.html"><strong aria-hidden="true">6.1.</strong> 計算量クイズの解答</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">計算量について</a></li><li class="chapter-item expanded "><a href="complexity.html"><strong aria-hidden="true">1.</strong> 計算量とは？</a></li><li class="chapter-item expanded "><a href="complexity_landau.html"><strong aria-hidden="true">2.</strong> 計算量の表し方</a></li><li class="chapter-item expanded "><a href="process_time.html"><strong aria-hidden="true">3.</strong> 処理時間について</a></li><li class="chapter-item expanded "><a href="sort.html"><strong aria-hidden="true">4.</strong> ソートの計算量</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sort_bubble_sort.html"><strong aria-hidden="true">4.1.</strong> バブルソート</a></li><li class="chapter-item expanded "><a href="sort_heap_sort.html"><strong aria-hidden="true">4.2.</strong> ヒープソート</a></li><li class="chapter-item expanded "><a href="sort_merge_sort.html"><strong aria-hidden="true">4.3.</strong> マージソート</a></li><li class="chapter-item expanded "><a href="sort_quick_sort.html"><strong aria-hidden="true">4.4.</strong> クイックソート</a></li><li class="chapter-item expanded "><a href="sort_limit.html"><strong aria-hidden="true">4.5.</strong> ソートの限界について</a></li></ol></li><li class="chapter-item expanded "><a href="example1.html"><strong aria-hidden="true">5.</strong> 例題</a></li><li class="chapter-item expanded "><a href="application.html"><strong aria-hidden="true">6.</strong> 発展</a></li><li class="chapter-item expanded "><a href="practice.html"><strong aria-hidden="true">7.</strong> 計算量クイズ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="complexity/answer.html"><strong aria-hidden="true">7.1.</strong> 計算量クイズの解答</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">8.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">9.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -145,8 +145,10 @@
                 <div id="content" class="content">
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="計算量とはなにか"><a class="header" href="#計算量とはなにか">計算量とはなにか</a></h1>
+<h1 id="計算量について"><a class="header" href="#計算量について">計算量について</a></h1>
+<h2 id="目次"><a class="header" href="#目次">目次</a></h2>
 <ul>
+<li><a href="./complexity.html">計算量とはなにか</a></li>
 <li><a href="./complexity_landau.html">計算量の表し方</a></li>
 <li><a href="./process_time.html">処理時間について</a></li>
 <li><a href="./sort.html">ソートの計算量</a>
@@ -160,28 +162,57 @@
 </li>
 <li><a href="./example1.html">例題</a></li>
 <li><a href="./application.html">発展</a></li>
-<li><a href="./practice.html">練習問題</a></li>
-<li><a href="./complexity/answer.html">解答</a></li>
+<li><a href="./practice.html">計算量クイズ</a>
+<ul>
+<li><a href="./complexity/answer.html">計算量クイズの解答</a></li>
+</ul>
+</li>
 <li><a href="./conclusion.html">まとめ</a></li>
 <li><a href="./references.html">参考</a></li>
 </ul>
-<h2 id="計算量computational-complexityとは"><a class="header" href="#計算量computational-complexityとは">計算量(computational complexity)とは</a></h2>
-<p>結果が同じ処理でも、使用するアルゴリズムによって実行時間が変わることがあります。</p>
-<p>その計算コストを評価するために用いるものが計算量です。</p>
+<h2 id="注意"><a class="header" href="#注意">注意</a></h2>
+<p>簡単のためサンプルプログラムは<code>Python3</code>を使用しますが、知らない方向けに適宜コメントを記載しています。</p>
+<p>※ コードは以下などで動作確認ができます。</p>
+<ul>
+<li><a href="https://paiza.io/projects/Y5PIJUfXrlpcV-zkCMmm7Q">paiza.io ブラウザで実行</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="計算量computational-complexityとは"><a class="header" href="#計算量computational-complexityとは">計算量(computational complexity)とは</a></h1>
+<p>プログラムを実行するとき、その処理内容に応じて以下のような計算コストがかかります。</p>
+<ul>
+<li>実行時間</li>
+<li>記憶領域（メモリ）</li>
+</ul>
+<p>また、結果が同じ処理でも、そのアルゴリズムによって実行時間や計算に必要な記憶領域は異なります。</p>
+<p>この計算コストを評価するために用いられるものが <strong>計算量</strong> です。</p>
+<h2 id="計算量の種類"><a class="header" href="#計算量の種類">計算量の種類</a></h2>
 <p>尺度によって以下の定義があります。</p>
 <ul>
 <li>時間計算量
 <ul>
-<li>計算のステップ数</li>
+<li>プログラムの実行に必要なステップ数</li>
+<li>処理時間に関係</li>
 </ul>
 </li>
 <li>空間計算量
 <ul>
-<li>記憶領域の使用量</li>
+<li>プログラムの実行に必要なメモリの量</li>
+<li>足りなくなったら計算できない</li>
 </ul>
 </li>
 </ul>
-<p>以下は<strong>時間計算量</strong>についての内容となります。</p>
+<h2 id="簡単な例"><a class="header" href="#簡単な例">簡単な例</a></h2>
+<p>例えば、1 から <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> までの総和を求めるプログラムを作成するとします。</p>
+<p>実現するためには次のような実装が考えられます。</p>
+<pre><code class="language-python">sum = 0
+for i in range(1, N+1): # 1 ~ N まで
+    sum += i # それぞれ足す
+</code></pre>
+<p>一方、次のようなプログラム<sup class="footnote-reference"><a href="#1">1</a></sup>でも同様の結果が得られます。</p>
+<pre><code class="language-python">sum = N*(N+1)//2 # 等差数列の和
+</code></pre>
+<p>どちらのプログラムがより効率が良いかは大体想像がつくと思います。</p>
+<p>実際に <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span> として実行してみると、前者のプログラムでは5秒ほどかかるのに対し、後者のプログラムでは一瞬で完了します。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="計算量の表し方"><a class="header" href="#計算量の表し方">計算量の表し方</a></h1>
 <p>計算機科学では <strong>ランダウ記法（ビッグオー記法）</strong> と呼ばれるものが一般的に用いられ、<strong>漸近的に上から抑える</strong>ことで計算量を評価します。</p>

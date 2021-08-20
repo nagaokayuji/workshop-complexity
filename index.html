@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>計算量とはなにか - 計算量について</title>
+        <title>計算量について - 計算量について</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="complexity.html">計算量とはなにか</a></li><li class="chapter-item expanded "><a href="complexity_landau.html"><strong aria-hidden="true">1.</strong> 計算量の表し方</a></li><li class="chapter-item expanded "><a href="process_time.html"><strong aria-hidden="true">2.</strong> 処理時間について</a></li><li class="chapter-item expanded "><a href="sort.html"><strong aria-hidden="true">3.</strong> ソートの計算量</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sort_bubble_sort.html"><strong aria-hidden="true">3.1.</strong> バブルソート</a></li><li class="chapter-item expanded "><a href="sort_heap_sort.html"><strong aria-hidden="true">3.2.</strong> ヒープソート</a></li><li class="chapter-item expanded "><a href="sort_merge_sort.html"><strong aria-hidden="true">3.3.</strong> マージソート</a></li><li class="chapter-item expanded "><a href="sort_quick_sort.html"><strong aria-hidden="true">3.4.</strong> クイックソート</a></li><li class="chapter-item expanded "><a href="sort_limit.html"><strong aria-hidden="true">3.5.</strong> ソートの限界について</a></li></ol></li><li class="chapter-item expanded "><a href="example1.html"><strong aria-hidden="true">4.</strong> 例題</a></li><li class="chapter-item expanded "><a href="application.html"><strong aria-hidden="true">5.</strong> 発展</a></li><li class="chapter-item expanded "><a href="practice.html"><strong aria-hidden="true">6.</strong> 計算量クイズ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="complexity/answer.html"><strong aria-hidden="true">6.1.</strong> 計算量クイズの解答</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">計算量について</a></li><li class="chapter-item expanded "><a href="complexity.html"><strong aria-hidden="true">1.</strong> 計算量とは？</a></li><li class="chapter-item expanded "><a href="complexity_landau.html"><strong aria-hidden="true">2.</strong> 計算量の表し方</a></li><li class="chapter-item expanded "><a href="process_time.html"><strong aria-hidden="true">3.</strong> 処理時間について</a></li><li class="chapter-item expanded "><a href="sort.html"><strong aria-hidden="true">4.</strong> ソートの計算量</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sort_bubble_sort.html"><strong aria-hidden="true">4.1.</strong> バブルソート</a></li><li class="chapter-item expanded "><a href="sort_heap_sort.html"><strong aria-hidden="true">4.2.</strong> ヒープソート</a></li><li class="chapter-item expanded "><a href="sort_merge_sort.html"><strong aria-hidden="true">4.3.</strong> マージソート</a></li><li class="chapter-item expanded "><a href="sort_quick_sort.html"><strong aria-hidden="true">4.4.</strong> クイックソート</a></li><li class="chapter-item expanded "><a href="sort_limit.html"><strong aria-hidden="true">4.5.</strong> ソートの限界について</a></li></ol></li><li class="chapter-item expanded "><a href="example1.html"><strong aria-hidden="true">5.</strong> 例題</a></li><li class="chapter-item expanded "><a href="application.html"><strong aria-hidden="true">6.</strong> 発展</a></li><li class="chapter-item expanded "><a href="practice.html"><strong aria-hidden="true">7.</strong> 計算量クイズ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="complexity/answer.html"><strong aria-hidden="true">7.1.</strong> 計算量クイズの解答</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">8.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">9.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -144,8 +144,10 @@
                 <div id="content" class="content">
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="計算量とはなにか"><a class="header" href="#計算量とはなにか">計算量とはなにか</a></h1>
+<h1 id="計算量について"><a class="header" href="#計算量について">計算量について</a></h1>
+<h2 id="目次"><a class="header" href="#目次">目次</a></h2>
 <ul>
+<li><a href="./complexity.html">計算量とはなにか</a></li>
 <li><a href="./complexity_landau.html">計算量の表し方</a></li>
 <li><a href="./process_time.html">処理時間について</a></li>
 <li><a href="./sort.html">ソートの計算量</a>
@@ -159,35 +161,27 @@
 </li>
 <li><a href="./example1.html">例題</a></li>
 <li><a href="./application.html">発展</a></li>
-<li><a href="./practice.html">練習問題</a></li>
-<li><a href="./complexity/answer.html">解答</a></li>
+<li><a href="./practice.html">計算量クイズ</a>
+<ul>
+<li><a href="./complexity/answer.html">計算量クイズの解答</a></li>
+</ul>
+</li>
 <li><a href="./conclusion.html">まとめ</a></li>
 <li><a href="./references.html">参考</a></li>
 </ul>
-<h2 id="計算量computational-complexityとは"><a class="header" href="#計算量computational-complexityとは">計算量(computational complexity)とは</a></h2>
-<p>結果が同じ処理でも、使用するアルゴリズムによって実行時間が変わることがあります。</p>
-<p>その計算コストを評価するために用いるものが計算量です。</p>
-<p>尺度によって以下の定義があります。</p>
+<h2 id="注意"><a class="header" href="#注意">注意</a></h2>
+<p>簡単のためサンプルプログラムは<code>Python3</code>を使用しますが、知らない方向けに適宜コメントを記載しています。</p>
+<p>※ コードは以下などで動作確認ができます。</p>
 <ul>
-<li>時間計算量
-<ul>
-<li>計算のステップ数</li>
+<li><a href="https://paiza.io/projects/Y5PIJUfXrlpcV-zkCMmm7Q">paiza.io ブラウザで実行</a></li>
 </ul>
-</li>
-<li>空間計算量
-<ul>
-<li>記憶領域の使用量</li>
-</ul>
-</li>
-</ul>
-<p>以下は<strong>時間計算量</strong>についての内容となります。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                                                    <a rel="next" href="complexity_landau.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="complexity.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -198,7 +192,7 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                                    <a rel="next" href="complexity_landau.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="complexity.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
