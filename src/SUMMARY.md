@@ -1,4 +1,5 @@
-- [計算量とはなにか](./complexity.md)
+- [計算量について](./index.md)
+  - [計算量とは？](./complexity.md)
   - [計算量の表し方](./complexity_landau.md)
   - [処理時間について](./process_time.md)
   - [ソートの計算量](./sort.md)
