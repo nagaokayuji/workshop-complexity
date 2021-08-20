@@ -1,4 +1,4 @@
-N = 2
+N = 100000
 sum = 0
 i = 1
 while i * i <= N:
