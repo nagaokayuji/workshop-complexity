@@ -147,19 +147,22 @@
 <h1 id="バブルソート-span-classkatexspan-classkatex-html-aria-hiddentruespan-classbasespan-classstrut-styleheight1064108emvertical-align-025emspanspan-classmord-mathnormal-stylemargin-right002778emospanspan-classmopenspanspan-classmordspan-classmord-mathnormal-stylemargin-right010903emnspanspan-classmsupsubspan-classvlist-tspan-classvlist-rspan-classvlist-styleheight08141079999999999emspan-styletop-3063emmargin-right005emspan-classpstrut-styleheight27emspanspan-classsizing-reset-size6-size3-mtightspan-classmord-mtight2spanspanspanspanspanspanspanspanspan-classmclosespanspanspanspan"><a class="header" href="#バブルソート-span-classkatexspan-classkatex-html-aria-hiddentruespan-classbasespan-classstrut-styleheight1064108emvertical-align-025emspanspan-classmord-mathnormal-stylemargin-right002778emospanspan-classmopenspanspan-classmordspan-classmord-mathnormal-stylemargin-right010903emnspanspan-classmsupsubspan-classvlist-tspan-classvlist-rspan-classvlist-styleheight08141079999999999emspan-styletop-3063emmargin-right005emspan-classpstrut-styleheight27emspanspan-classsizing-reset-size6-size3-mtightspan-classmord-mtight2spanspanspanspanspanspanspanspanspan-classmclosespanspanspanspan">バブルソート: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></a></h1>
 <p>順序通りになっていない2要素に対して swap を繰り返していけばいつかは
 ソートされるだろう、というアルゴリズムです。</p>
-<p>ライブラリや他のアルゴリズムを知らない状態でソートを実装しろと言われたら、誰もがこの方法で実装するのではないでしょうか。</p>
-<p>関連: 転倒数</p>
-<p>実装例は以下です。
-簡単のため常に<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>の計算量となりますが、
-ソートされていたら終了、という処理を追加すると最良で<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>となります。</p>
-<pre><code class="language-python">def bubble_sort(l: list):
-    n = len(l)
-    for i in range(n-1):
-        for j in range(n-i-1):
-            if l[j] &gt; l[j+1]:
-                l[j], l[j+1] = l[j+1], l[j]
-    return l
+<p>ライブラリや他のアルゴリズムを知らない状態でソートを実装しろと言われたら、大体の人はこの方法で実装するのではないでしょうか。</p>
+<p>実装例は以下です。</p>
+<pre><code class="language-python">def bubble_sort(a: list):
+    n = len(a)
+    for _ in range(n):
+        for i in range(n-1):
+            if a[i] &gt; a[i+1]:
+                a[i], a[i+1] = a[i+1], a[i] # スワップ
+    return a
 </code></pre>
+<p>簡単のため常に<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>の計算量になる実装ですが
+ソートが完了したら終了する、という処理を追加することで最良で<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>となります。</p>
+<h2 id="関連するトピック"><a class="header" href="#関連するトピック">関連するトピック</a></h2>
+<ul>
+<li>転倒数</li>
+</ul>
 
                     </main>
 

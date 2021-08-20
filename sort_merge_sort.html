@@ -146,7 +146,6 @@
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="マージソート-span-classkatexspan-classkatex-html-aria-hiddentruespan-classbasespan-classstrut-styleheight1emvertical-align-025emspanspan-classmord-mathnormal-stylemargin-right002778emospanspan-classmopenspanspan-classmord-mathnormal-stylemargin-right010903emnspanspan-classmspace-stylemargin-right016666666666666666emspanspan-classmoplospan-stylemargin-right001389emgspanspanspan-classmspace-stylemargin-right016666666666666666emspanspan-classmord-mathnormal-stylemargin-right010903emnspanspan-classmclosespanspanspanspan"><a class="header" href="#マージソート-span-classkatexspan-classkatex-html-aria-hiddentruespan-classbasespan-classstrut-styleheight1emvertical-align-025emspanspan-classmord-mathnormal-stylemargin-right002778emospanspan-classmopenspanspan-classmord-mathnormal-stylemargin-right010903emnspanspan-classmspace-stylemargin-right016666666666666666emspanspan-classmoplospan-stylemargin-right001389emgspanspanspan-classmspace-stylemargin-right016666666666666666emspanspan-classmord-mathnormal-stylemargin-right010903emnspanspan-classmclosespanspanspanspan">マージソート: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></a></h1>
 <p>ノイマン型コンピュータ<sup class="footnote-reference"><a href="#1">1</a></sup> の発案者である フォン・ノイマン 考案のアルゴリズムです。</p>
-<p><strong>分割統治法</strong> と呼ばれる手法でソートします。</p>
 <p>データ数が1や2のデータに対しては簡単にソートできることを利用し、
 二等分したデータに対して再帰的に処理します。マージする際は小さい方から順にとっていく形になります。</p>
 <pre><code class="language-python">def merge_sort(l: list):
@@ -176,6 +175,11 @@
         ret += b[index_b:]
     return ret
 </code></pre>
+<h2 id="関連するトピック"><a class="header" href="#関連するトピック">関連するトピック</a></h2>
+<ul>
+<li>分割統治法</li>
+</ul>
+<hr />
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>CPU + 記憶装置 で構成される計算機を指し、現代のコンピュータはほぼ全てノイマン型コンピュータです。</p>
 </div>
