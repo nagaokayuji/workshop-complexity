@@ -1,9 +1,11 @@
-def bubble_sort(l: list):
-    n = len(l)
-    print(l)
-    for i in range(n-1):
-        for j in range(n-i-1):
-            if l[j] > l[j+1]:
-                l[j], l[j+1] = l[j+1], l[j]
-        print(l)
-    return l
+def bubble_sort(a: list):
+    n = len(a)
+    for _ in range(n):
+        for i in range(n-1):
+            if a[i] > a[i+1]:
+                a[i], a[i+1] = a[i+1], a[i] # スワップ
+    return a
+
+l = [128,6,1,22,2,-12,34,293,208,14,7,67,-123,5,166,43]
+
+print(bubble_sort(l))

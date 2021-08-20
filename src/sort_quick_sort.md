@@ -1,7 +1,5 @@
 # クイックソート: $O(N^2)$
 
-こちらも分割統治法の一種です。
-
 代表的なアルゴリズムの中では最も高速とされています。
 
 最悪計算量$O(N^2)$ですが、平均では$O(N \log N)$となります。
@@ -20,3 +18,8 @@ def quick_sort(l: list):
     c = list(filter(lambda x: x > pivot, l))
     return quick_sort(a) + b + quick_sort(c)
 ```
+
+## 関連するトピック
+- 分割統治法
+  - マージソートと同様
+- 乱択アルゴリズム

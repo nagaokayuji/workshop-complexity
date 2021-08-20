@@ -50,11 +50,11 @@ class MinHeap:
 
 ```python
 def heap_sort(l: list):
-    heap = MinHeap()
+    heap = MinHeap() # ヒープを作成
     for value in l:
-        heap.push(value)
+        heap.push(value) # 全部突っ込む
     ret = []
     while not heap.is_empty():
-        ret.append(heap.pop())
+        ret.append(heap.pop()) # ヒープから全部取り出してリストに入れる
     return ret
 ```
