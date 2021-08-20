@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>計算量とはなにか - 計算量について</title>
+        <title>処理時間について - 計算量について</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="complexity.html">計算量とはなにか</a></li><li class="chapter-item expanded "><a href="complexity_landau.html"><strong aria-hidden="true">1.</strong> 計算量の表し方</a></li><li class="chapter-item expanded "><a href="process_time.html"><strong aria-hidden="true">2.</strong> 処理時間について</a></li><li class="chapter-item expanded "><a href="sort.html"><strong aria-hidden="true">3.</strong> ソートの計算量</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sort_bubble_sort.html"><strong aria-hidden="true">3.1.</strong> バブルソート</a></li><li class="chapter-item expanded "><a href="sort_heap_sort.html"><strong aria-hidden="true">3.2.</strong> ヒープソート</a></li><li class="chapter-item expanded "><a href="sort_merge_sort.html"><strong aria-hidden="true">3.3.</strong> マージソート</a></li><li class="chapter-item expanded "><a href="sort_quick_sort.html"><strong aria-hidden="true">3.4.</strong> クイックソート</a></li><li class="chapter-item expanded "><a href="sort_limit.html"><strong aria-hidden="true">3.5.</strong> ソートの限界について</a></li></ol></li><li class="chapter-item expanded "><a href="example1.html"><strong aria-hidden="true">4.</strong> 例題</a></li><li class="chapter-item expanded "><a href="application.html"><strong aria-hidden="true">5.</strong> 発展</a></li><li class="chapter-item expanded "><a href="practice.html"><strong aria-hidden="true">6.</strong> 計算量クイズ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="complexity/answer.html"><strong aria-hidden="true">6.1.</strong> 計算量クイズの解答</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="complexity.html">計算量とはなにか</a></li><li class="chapter-item expanded "><a href="complexity_landau.html"><strong aria-hidden="true">1.</strong> 計算量の表し方</a></li><li class="chapter-item expanded "><a href="process_time.html" class="active"><strong aria-hidden="true">2.</strong> 処理時間について</a></li><li class="chapter-item expanded "><a href="sort.html"><strong aria-hidden="true">3.</strong> ソートの計算量</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sort_bubble_sort.html"><strong aria-hidden="true">3.1.</strong> バブルソート</a></li><li class="chapter-item expanded "><a href="sort_heap_sort.html"><strong aria-hidden="true">3.2.</strong> ヒープソート</a></li><li class="chapter-item expanded "><a href="sort_merge_sort.html"><strong aria-hidden="true">3.3.</strong> マージソート</a></li><li class="chapter-item expanded "><a href="sort_quick_sort.html"><strong aria-hidden="true">3.4.</strong> クイックソート</a></li><li class="chapter-item expanded "><a href="sort_limit.html"><strong aria-hidden="true">3.5.</strong> ソートの限界について</a></li></ol></li><li class="chapter-item expanded "><a href="example1.html"><strong aria-hidden="true">4.</strong> 例題</a></li><li class="chapter-item expanded "><a href="application.html"><strong aria-hidden="true">5.</strong> 発展</a></li><li class="chapter-item expanded "><a href="practice.html"><strong aria-hidden="true">6.</strong> 計算量クイズ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="complexity/answer.html"><strong aria-hidden="true">6.1.</strong> 計算量クイズの解答</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -144,50 +144,25 @@
                 <div id="content" class="content">
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="計算量とはなにか"><a class="header" href="#計算量とはなにか">計算量とはなにか</a></h1>
-<ul>
-<li><a href="./complexity_landau.html">計算量の表し方</a></li>
-<li><a href="./process_time.html">処理時間について</a></li>
-<li><a href="./sort.html">ソートの計算量</a>
-<ul>
-<li><a href="./sort_bubble_sort.html">バブルソート</a></li>
-<li><a href="./sort_heap_sort.html">ヒープソート</a></li>
-<li><a href="./sort_merge_sort.html">マージソート</a></li>
-<li><a href="./sort_quick_sort.html">クイックソート</a></li>
-<li><a href="./sort_limit.html">ソートの限界について</a></li>
-</ul>
-</li>
-<li><a href="./example1.html">例題</a></li>
-<li><a href="./application.html">発展</a></li>
-<li><a href="./practice.html">練習問題</a></li>
-<li><a href="./complexity/answer.html">解答</a></li>
-<li><a href="./conclusion.html">まとめ</a></li>
-<li><a href="./references.html">参考</a></li>
-</ul>
-<h2 id="計算量computational-complexityとは"><a class="header" href="#計算量computational-complexityとは">計算量(computational complexity)とは</a></h2>
-<p>結果が同じ処理でも、使用するアルゴリズムによって実行時間が変わることがあります。</p>
-<p>その計算コストを評価するために用いるものが計算量です。</p>
-<p>尺度によって以下の定義があります。</p>
-<ul>
-<li>時間計算量
-<ul>
-<li>計算のステップ数</li>
-</ul>
-</li>
-<li>空間計算量
-<ul>
-<li>記憶領域の使用量</li>
-</ul>
-</li>
-</ul>
-<p>以下は<strong>時間計算量</strong>についての内容となります。</p>
+<h1 id="処理時間について"><a class="header" href="#処理時間について">処理時間について</a></h1>
+<p><strong>1秒あたり <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span> ステップ</strong>の演算が可能であると仮定します。（一般的なCPUのクロック周波数は 1 ~ 5 GHz程度、1ステップあたり10クロック程度）</p>
+<p>このとき、およそ<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span>ステップにつき1秒の時間がかかることになります。</p>
+<p>このことから、</p>
+<p>数万件のデータに対して<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>のアルゴリズムで処理すると、数秒で終了することが期待できます。</p>
+<p>しかし、数十万件のデータに対して同様の処理を実行した場合、数百秒程度の実行時間となってしまいます。（実際にはさらにかかる場合が多い）</p>
+<p>一方、同様の結果が得られる処理を<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>のアルゴリズムで構築した場合、数百万件のデータに対しても<strong>数ミリ秒</strong>で処理を完了することができます。</p>
+<p>※このような数百万件のデータは実世界でも多く現れ、また<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>の処理を<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>にすることで高速化できる処理は多くあります。</p>
+<p>→ SQL のJOINなど</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="complexity_landau.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         
-                                                    <a rel="next" href="complexity_landau.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="sort.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -197,8 +172,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="complexity_landau.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                                    <a rel="next" href="complexity_landau.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="sort.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
