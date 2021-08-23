@@ -10,19 +10,49 @@
 
 全部足していくと、$\sum_{i=1}^N \lfloor \frac{N}{i} \rfloor$
 
-最大でどのくらいになるのかを知りたいので、床関数を外して計算していきます。
+床関数を外して計算すると
+$$\lfloor\sum_{i=1}^N \frac{N}{i}\rfloor \le \sum_{i=1}^N \frac{N}{i}  = N \sum_{i=1}^N \frac{1}{i}$$
 
-$$\sum_{i=1}^N \frac{N}{i}  = N \sum_{i=1}^N \frac{1}{i}$$
+となります。
 
-について近似的に
+ここで、
+$\sum_{i=1}^N \frac{1}{i}$について
 
-$$N\int_1^N \frac{1}{x}dx$$
+$$
+\int_1^{N+1} \frac{1}{x} dx = \log(N+1) \le \sum_{i=1}^N \frac{1}{i} \tag{1}
+$$
 
-として計算すると
+$$
+(\sum_{i=1}^N \frac{1}{i}) - 1= \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{N} \le \int_1^{N} \frac{1}{x} dx =  \log N \tag{2}
+$$
+
+が成り立つため、
+$(1), (2)$ より
+$$
+\log (N+1) \le \sum_{i=1}^N \frac{1}{i} \le 1 + \log N
+$$
+が成り立ちます。
+
+$N > 0$ であるから、
+$$
+N\log (N+1) \le N\sum_{i=1}^N \frac{1}{i} \le N (1 + \log N)
+$$
+
+
+よって、計算量は
+
 
 $$O(N \log N)$$
 
 となります。
+
+
+また、下からも抑えられているため
+$$
+\Omega (N \log N)
+$$
+が言えます。
+
 
 [参考]
 
