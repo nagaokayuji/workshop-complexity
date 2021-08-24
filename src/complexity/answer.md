@@ -21,8 +21,6 @@ for i in range(2, N+1):
 print(sum)
 ```
 
-まず、外側のループで$N-1$回はかかってしまいます。
-
 内側のループについて考えると、
 - $i = 2$ のとき、 $j$ は $\lfloor N/2^3 \rfloor = \lfloor N/8 \rfloor$ 通り
 - $i = 3$ のとき、 $j$ は $\lfloor N/3^3 \rfloor = \lfloor N/27 \rfloor$ 通り
