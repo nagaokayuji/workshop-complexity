@@ -23,4 +23,4 @@
 簡単のためサンプルプログラムは`Python3`を使用しますが、知らない方向けに適宜コメントを記載しています。
 
 ※ コードは以下などで動作確認ができます。
-- [paiza.io ブラウザで実行](https://paiza.io/projects/Y5PIJUfXrlpcV-zkCMmm7Q)
+- [paiza.io ブラウザで実行](https://paiza.io/projects/kHNZa8u481Ut2zApjlQm1A)
