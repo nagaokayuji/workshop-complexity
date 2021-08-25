@@ -6,6 +6,7 @@
 
 ```python
 sum = 0
+i = 0
 while i < N:
   sum += 2
   i += 4
